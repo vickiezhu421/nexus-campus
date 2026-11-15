@@ -1,0 +1,31 @@
+# Render 部署配置（Blueprint）
+# 用法：把项目推到 GitHub → render.com → New → Blueprint → 选这个仓库 → 它会读这个文件自动配置
+#
+# ⚠️ 关于数据持久化（重要）：
+#   免费版没有持久磁盘，每次重新部署 data/nexus.db 会被清空（所有帖子/账号丢失）。
+#   所以：每次改东西 / 重新部署之前，先在管理后台点「⬇ 备份数据库」把文件下到电脑上。
+#   要真正长期保存数据，请升级到付费版并取消下面 disk 段的注释。
+
+services:
+  - type: web
+    name: nexus-campus
+    runtime: node
+    plan: free
+    nodeVersion: "22"
+    buildCommand: npm install --omit=dev
+    startCommand: node --experimental-sqlite server/index.js
+    healthCheckPath: /api/settings
+    autoDeploy: false
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: NODE_OPTIONS
+        value: "--experimental-sqlite"
+      # 上线必须为 0
+      - key: DEV_MODE
+        value: "0"
+    # 付费版专属：取消注释即可启用持久磁盘（1GB 够一个学校论坛用很多年）
+    # disk:
+    #   name: nexus-data
+    #   mountPath: /opt/render/project/src/data
+    #   sizeGB: 1
