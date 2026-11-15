@@ -1,0 +1,20 @@
+{
+  "name": "nexus-campus",
+  "version": "1.0.0",
+  "description": "NEXUS Campus community platform — forum for students (Q&A, Links, Advice, Find Friends, Messages, Groups)",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "start": "node --experimental-sqlite server/index.js",
+    "dev": "node --experimental-sqlite server/index.js",
+    "promote": "node server/cli.js",
+    "backup": "node server/backup.js",
+    "restore": "node server/backup.js restore"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "nodemailer": "^10.3.1"
+  }
+}
