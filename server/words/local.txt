@@ -1,0 +1,31 @@
+# 新加坡本地 / 马来 / 泰米尔 / Singlish（Hokkien）粗口与侮辱
+# —— 这些是 LDNOOBW 完全没有覆盖的，SG 校园必需 ——
+# 马来语 / 印尼语
+bodoh
+bangang
+sial
+sialan
+celaka
+babi
+anu
+anjing
+bajingan
+jahanam
+pariah
+keling
+pukimak
+jubur
+pantat
+butuh
+asu
+# Singlish / 福建话 vulgar（罗马化 compact 形式）
+kannina
+kanina
+cheebye
+cibai
+hamchap
+hamsap
+lanjiao
+lanjiao
+siao
+siaolan
